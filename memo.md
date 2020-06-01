@@ -38,7 +38,7 @@
 
 ### Data Types
 
-- string : text 묶음. 큰따옴표로 묶어줘야 한다
+- string : text 묶음. 큰따옴표/작은따옴표로 묶어줘야 한다 (단 처음과 끝이 같은 종류의 따옴표여야 함)
 
 - boolean : true(1)/false(0)
 
@@ -106,4 +106,105 @@ const ObjInArr = [
 
 
 - TMI(?) : js가 망가져도 HTML, CSS는 영향 받지 않는다
+-------------
+### JS Function
+
+- 함수: 무언가 기능을 수행하기 위한 코드 조각
+
+- console도 object이다. log는 console 내의 함수이다. (built-in function 내장함수)
+
+```js
+// js function's basic structure
+function functionName(){
+    console.log('Function Content');
+}
+
+functionName(); // Function Content
+
+// with an argument(인자) or parameter
+function functionName(potato){
+    console.log('hi', potato); // console.log에서 인자1: 'hi', 인자2: potato
+}
+
+functionName('hi'); // Function Content
+```
+
+- 인자는 함수 내의 변수처럼 기능한다. 인자명은 데이터와 아~~~~무 상관이 없다.
+
+```js
+// sexy string
+function sayHello(name, age){
+	console.log(`Hello ${name} you are ${age} years old`); // using 백틱
+}
+
+sayHello('Nicolas', 15);
+```
+
+- return이 있는 함수
+
+```js
+function sayHello(name, age){
+	return `Hello ${name} you are ${age} years old`;
+}
+
+const greetNicolas = sayHello("nicolas", age); // greetNicolas는 sayHello("nicolas", age)의 반환값이다.
+
+console.log(greetNicolas);
+```
+
+- 계산기 객체 만들기 실습
+
+```js
+const calculator = {
+    plus: function(a, b){
+        return a + b;
+    },
+    minus: function(a, b){
+        return a - b;
+    }
+};
+calculator.plus(5, 5);
+calculator.minus(5, 5);
+
+/ ********************************* /
+const plus = calculator.plus(5, 5);
+console.log(plus);
+
+```
+
+
+
+### HTML & JS
+
+- (중요)**D**ocumment **O**bject **M**odel
+  - javascript는 HTML 태그들을 가져가서 객체로 만든다.
+  - 즉 내 HTML, document에 있는 모든 것들은 객체가 된다.
+  - 모든 브라우저 내의 함수들을 DOM 형태로 변경 가능하다. == **자바스크립트로 선택한 것은 모두 객체화된다는 뜻.**
+
+```js
+console.dir(document.getElementById('title'));
+```
+
+- HTML을 js로 컨트롤할 수 있다.
+
+```js
+title.style.color = 'red'; 
+document.title = "I own you now";
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
