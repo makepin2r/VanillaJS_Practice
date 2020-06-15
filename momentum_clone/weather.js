@@ -1,4 +1,6 @@
 const weather = document.querySelector(".js-weather");
+const weather_icon = document.querySelector(".js-weather-icon");
+const weather_location = document.querySelector(".js-weather-location");
 
 const API_KEY = "fc009e0dd4278fe78f2ba3948eabdf50";
 const COORDS = 'coords';
@@ -10,7 +12,12 @@ function getWeather(lat, lon){
         console.log(json);
         const temperature = json.main.temp;
         const place = json.name;
-        weather.innerText = `${temperature} @ ${place}`;
+        weather.innerText = `${temperature} \u2103`;
+        weather_location.innerText = `${place}`;
+        // icon
+        const iconcode = json.weather[0].icon;
+        const iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        weather_icon.setAttribute('src', iconurl);
     });
     // then : 데이터가 완전히 들어온 다음 함수를 호출한다.
 }

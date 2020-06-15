@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>`
-        <h1 class="js-title">00:00</h1>
-    </div>
-    <form class="js-form form">
-        <input type="text" placeholder="What is your name?">
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-    <form class="js-todoForm">
-        <input type="text" placeholder="Write a todo" />
-    </form>
-    <ul class="js-todoList">
-    </ul>
-    <span class="js-weather"></span>
+<body>
+   <div class="header_wrap">
+       <div class="weather">
+          <img class="js-weather-icon" src="" alt="Weather Icon">
+           <div class="text_wrap">
+               <span class="js-weather"></span>
+               <span class="js-weather-location"></span>
+           </div>
+       </div>
+   </div>
+   <div class="main_wrap">
+        <div class="clock">
+            <div class="con_wrap">
+                <h1 class="js-title">00:00</h1>
+                <p class="message">Good afternoon, <span clas="js-name">someone.</span></p>
+            </div>
+        </div>
+        <div class="info">
+            <form class="js-form form">
+            <input type="text" placeholder="What is your name?">
+        </form>
+        <h4 class="js-greetings greetings"></h4>
+        <form class="js-todoForm">
+            <fieldset>
+                <legend>What is your main focus for today?</legend>
+                <input type="text" placeholder="" />
+            </fieldset>
+        </form>
+        </div>
+        <div class="list">
+            <ul class="js-todoList">
+        </ul>
+        </div>
+       
+   </div>
 
 
     <script src="clock.js"></script>

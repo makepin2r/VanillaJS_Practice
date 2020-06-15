@@ -44,20 +44,22 @@ function paintTodo(text){
     const span = document.createElement("span");
     const newID = todos.length + 1;
 
-    delBtn.innerText = "❌";
-    delBtn.addEventListener("click", deleteTodo);
-    span.innerText = text;
-    li.appendChild(delBtn);
-    li.appendChild(span);
-    todoList.appendChild(li);
-    li.id = newID;
+    if(newID <= 3){
+        delBtn.innerText = `\u2716`;
+        delBtn.addEventListener("click", deleteTodo);
+        span.innerText = text;
+        li.appendChild(span);
+        todoList.appendChild(li);
+        li.appendChild(delBtn);
+        li.id = newID;
 
-    const todoObj = {
-        id: newID,
-        text: text,
-    };
-    todos.push(todoObj);    
-    saveTodos();
+        const todoObj = {
+            id: newID,
+            text: text,
+        };
+        todos.push(todoObj);    
+        saveTodos();
+    }
 }
 
 function handleSubmit(event){
